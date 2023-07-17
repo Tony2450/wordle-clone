@@ -30,12 +30,12 @@ const Keyboard = () => {
 
     return (
         <div className="keyboard" onKeyDown={handleKeyDown}>
-            {keys1.map((key)=><Key keyVal={key}/>)}
+            {keys1.map((key)=><Key keyVal={key} key={key}/>)}
             <div className="space"></div>
-            {keys2.map((key)=><Key keyVal={key}/>)}
+            {keys2.map((key)=><Key keyVal={key} key={key}/>)}
             <div className="space"></div>
             <Key keyVal={"ENTER"} isLarge={true}/>
-            {keys3.map((key)=><Key keyVal={key}/>)}
+            {keys3.map((key)=><Key keyVal={key} key={key}/>)}
             <Key keyVal={"DELETE"} isLarge={true}/>
 
         </div>
