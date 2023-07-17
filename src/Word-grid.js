@@ -1,6 +1,5 @@
 import React from "react";
 import WordRow from "./Word-row";
-import classNames from 'classnames';
 
 const WordGrid = (props) => {
     

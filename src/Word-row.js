@@ -1,15 +1,18 @@
 import React from "react";
 import LetterBox from "./Letter-box";
-import classNames from 'classnames';
+import { useContext } from "react";
+import { AppContext } from "./App";
 
 const WordRow = (props) => {
+    const {status} = useContext(AppContext);
+
     return(
         <div className="word-row">
-            <LetterBox letter={props.rowArray[0]}/>
-            <LetterBox letter={props.rowArray[1]}/>
-            <LetterBox letter={props.rowArray[2]}/>
-            <LetterBox letter={props.rowArray[3]}/>
-            <LetterBox letter={props.rowArray[4]}/>
+            <LetterBox letter={props.rowArray[0]} letterStatus={status[props.row][0]}/>
+            <LetterBox letter={props.rowArray[1]} letterStatus={status[props.row][1]}/>
+            <LetterBox letter={props.rowArray[2]} letterStatus={status[props.row][2]}/>
+            <LetterBox letter={props.rowArray[3]} letterStatus={status[props.row][3]}/>
+            <LetterBox letter={props.rowArray[4]} letterStatus={status[props.row][4]}/>
         </div>
     )
 }
