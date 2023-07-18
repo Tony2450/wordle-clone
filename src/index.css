@@ -123,13 +123,37 @@ body {
 
 .keyboard {
   display: grid;
-  grid-template-columns: repeat(20, minmax(auto, 1.25em));
-  grid-auto-rows: 2.75em;
-  gap: 0.25em;
+  grid-template-columns: repeat(20, minmax(auto, 1.5em));
+  grid-auto-rows: 3.5em;
+  gap: 0.35em;
   justify-content: center;
 }
 
 .key>svg {
   width: 1.75em;
   height: 1.75em;
+}
+
+.endgame h3{
+  padding: 30px;
+  text-align: center;
+}
+
+.play-again{
+  background-color: hsl(var(--hue, 200), var(--saturation, 25%), calc(var(--lightness-offset, 0%) + var(--lightness, 90%)));
+  width: 50%;
+  padding: auto;
+  height: 70px;
+  margin: auto;
+  font-size: 1.0em;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.endgame{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
 }

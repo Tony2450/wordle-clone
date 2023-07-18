@@ -18,7 +18,7 @@ const Keyboard = () => {
         } else {
             onKeyPress(e.key)
         }
-    })
+    },[onDelete,onEnter,onKeyPress])
 
     useEffect(() => {
         document.addEventListener("keydown", handleKeyDown);
