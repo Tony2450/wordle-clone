@@ -15,7 +15,7 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  font-size: clamp(1.0rem, 3.0vmin, 1.5rem);
+  font-size: clamp(0.8rem, 3.0vmin, 1.5rem);
 }
 
 .App {
@@ -46,11 +46,12 @@ body {
 }
 
 .letter-box {
+  font-size: clamp(1.0rem, 3.5vmin, 1.5rem);
   margin: 3px;
-  min-height: 55px;
-  min-width: 55px;
-  height: 3.25em;
-  width: 3.25em;
+  min-height: 40px;
+  min-width: 40px;
+  height: 3.5em;
+  width: 3.5em;
   background-color: hsl(var(--hue, 200), var(--saturation, 1%), calc(var(--lightness-offset, 0%) + var(--lightness, 51%)));
   border: 2px solid lightgray;
   border-radius: 10px;
