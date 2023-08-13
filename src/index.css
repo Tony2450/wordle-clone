@@ -15,7 +15,7 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  font-size: clamp(0.80rem, 2.5vmin, 1.5rem);
+  font-size: clamp(1.0rem, 3.0vmin, 1.5rem);
 }
 
 .App {
@@ -47,10 +47,10 @@ body {
 
 .letter-box {
   margin: 3px;
-  min-height: 40px;
-  min-width: 40px;
-  height: 3em;
-  width: 3em;
+  min-height: 55px;
+  min-width: 55px;
+  height: 3.25em;
+  width: 3.25em;
   background-color: hsl(var(--hue, 200), var(--saturation, 1%), calc(var(--lightness-offset, 0%) + var(--lightness, 51%)));
   border: 2px solid lightgray;
   border-radius: 10px;
@@ -60,7 +60,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: auto;
 }
 
 .letter-box.wrong {
@@ -135,14 +134,13 @@ body {
 }
 
 .endgame h3{
-  padding: auto;
   margin: auto;
+  padding-bottom: 20px;
 }
 
 .play-again{
   background-color: hsl(var(--hue, 200), var(--saturation, 25%), calc(var(--lightness-offset, 0%) + var(--lightness, 90%)));
   width: 50%;
-  padding: auto;
   height: 70px;
   margin: auto;
   font-size: 1.0em;

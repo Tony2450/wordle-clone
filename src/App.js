@@ -87,11 +87,9 @@ function App() {
       console.error(error);
     } finally {
       if (result.word !== undefined){
-        let bool = true
-        return bool
+        return true
       } else {
-        let bool = false
-        return bool
+        return false
       }
     }
   }
@@ -99,7 +97,6 @@ function App() {
   const onEnter = async () => {
     const guessed = board[attempt].join("");
     const guessedWord = guessed.toLowerCase();
-    const booleanCheck = await checkWord(guessedWord);
 
     const checkGameOver = () => {
       if (guessedWord === wordle) {
@@ -112,7 +109,7 @@ function App() {
     //Are we at 5 letters?
     if (position === 5) {
       //Is the word acceptable?
-      if (booleanCheck === true) {
+      if (await checkWord(guessedWord)) {
         const wordleUpperCase = wordle.toUpperCase();
         const wordleArray = wordleUpperCase.split("");
         const currentStatus = status;
