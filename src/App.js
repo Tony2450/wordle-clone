@@ -10,6 +10,7 @@ import wordBank from './wordle-bank.txt'
 export const AppContext = createContext()
 
 function App() {
+  const message = document.querySelector(".message")
 
   const [wordle, setWordle] = useState("")
 
@@ -56,6 +57,8 @@ function App() {
     lose: false,
     gameOver: false,
   })
+
+  const [gameMessage, setGameMessage] = useState(true);
 
   const onKeyPress = (key) => {
     if (position < 5 && (key.match(/[a-zA-Z]/) && key.length === 1)) {
@@ -185,6 +188,7 @@ function App() {
             wrongGuesses = [...wrongGuesses, letter]
           }
         });
+        setGameMessage(false)
         setCorrect(correctGuesses)
         setElsewhere(elsewhereGuesses)
         setWrong(wrongGuesses)
@@ -198,10 +202,12 @@ function App() {
           checkGameOver()
         };
       } else {
-        alert("This is not a word")
+        setGameMessage(true)
+        message.innerText = `This is not a word, try again!`;
       }
     } else {
-      alert(`Too short, you need ${5 - position} more letter(s)`)
+      setGameMessage(true)
+      message.innerText = `Too short, you need ${5 - position} more letter(s)`;
     }
   };
 
@@ -219,6 +225,7 @@ function App() {
     <div className="App">
       <h1 className='title'>Wordle!</h1>
       <AppContext.Provider value={{ board, setBoard, attempt, setAttempt, position, setPosition, onDelete, onEnter, onKeyPress, status, wrongLetters, elsewhereLetters, correctLetters }}>
+        {<div className={`message ${gameMessage ? "" : "hide"}`}>Write a 5 letter word and press ENTER to submit!</div>}
         <WordGrid board={board} />
         {gameOver.gameOver ? <GameOver win={gameOver.win} lose={gameOver.lose} wordle={wordle} /> : <Keyboard />}
       </AppContext.Provider>

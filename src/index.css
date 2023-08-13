@@ -18,6 +18,10 @@ body {
   font-size: clamp(0.8rem, 3.0vmin, 1.5rem);
 }
 
+.hide {
+  display: none;
+}
+
 .App {
   display: flex;
   flex-flow: column nowrap;
