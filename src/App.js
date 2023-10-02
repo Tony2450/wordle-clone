@@ -5,7 +5,7 @@ import WordGrid from './Word-grid';
 import Keyboard from './keyboard';
 import { createContext } from 'react';
 import GameOver from './GameOver';
-import wordBank from './wordle-bank.txt'
+import wordBank from './wordle-bank.txt';
 
 export const AppContext = createContext()
 
@@ -89,7 +89,7 @@ function App() {
     } catch (error) {
       console.error(error);
     } finally {
-      if (result.word !== undefined){
+      if (result.word !== undefined) {
         return true
       } else {
         return false
@@ -103,7 +103,7 @@ function App() {
 
     const checkGameOver = () => {
       if (guessedWord === wordle) {
-        setGameOver({ win: true, lose: false, gameOver: true })
+        setGameOver({ win: true, lose: false, gameOver: true }) 
       } else if (attempt === 5) {
         setGameOver({ win: false, lose: true, gameOver: true })
       }
@@ -121,6 +121,7 @@ function App() {
         let wrongGuesses = [...wrongLetters];
 
         board[attempt].forEach(function (letter, index) {
+
           //If letter is correct
           if (letter === wordleArray[index]) {
             currentStatus[attempt][index] = "correct";
@@ -131,7 +132,9 @@ function App() {
             //1. Positions where the letter occurs in the actual wordle
             const indices = [];
             let correctIndices = wordleArray.indexOf(letter);
+            //The indexOf() method returns -1 if the value is not found.
             while (correctIndices !== -1) {
+              //Push into an array the correct indices of the letter
               indices.push(correctIndices);
               correctIndices = wordleArray.indexOf(letter, correctIndices + 1);
             }
