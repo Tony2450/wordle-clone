@@ -1,11 +1,11 @@
-import './index.css'
+import './static/index.css'
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import WordGrid from './Word-grid';
-import Keyboard from './keyboard';
+import WordGrid from './Wordgrid/Word-grid';
+import Keyboard from './Keyboard/keyboard';
 import { createContext } from 'react';
-import GameOver from './GameOver';
-import wordBank from './wordle-bank.txt';
+import GameOver from './Gamestate/GameOver';
+import wordBank from './Wordlebank/wordle-bank.txt';
 
 export const AppContext = createContext()
 
@@ -103,7 +103,7 @@ function App() {
 
     const checkGameOver = () => {
       if (guessedWord === wordle) {
-        setGameOver({ win: true, lose: false, gameOver: true }) 
+        setGameOver({ win: true, lose: false, gameOver: true })
       } else if (attempt === 5) {
         setGameOver({ win: false, lose: true, gameOver: true })
       }
