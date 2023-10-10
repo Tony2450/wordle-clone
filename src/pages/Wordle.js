@@ -225,13 +225,11 @@ function Wordle() {
   };
 
   return (
-    <div className="Wordle">
-      <AppContext.Provider value={{ board, setBoard, attempt, setAttempt, position, setPosition, onDelete, onEnter, onKeyPress, status, wrongLetters, elsewhereLetters, correctLetters }}>
-        {<div className={`message ${gameMessage ? "" : "hide"}`}>Write a 5 letter word and press ENTER to submit!</div>}
-        <WordGrid board={board} />
-        {gameOver.gameOver ? <GameOver win={gameOver.win} lose={gameOver.lose} wordle={wordle} /> : <Keyboard />}
-      </AppContext.Provider>
-    </div>
+    <AppContext.Provider value={{ board, setBoard, attempt, setAttempt, position, setPosition, onDelete, onEnter, onKeyPress, status, wrongLetters, elsewhereLetters, correctLetters }}>
+      {<div className={`message ${gameMessage ? "" : "hide"}`}>Write a 5 letter word and press ENTER to submit!</div>}
+      <WordGrid board={board} />
+      {gameOver.gameOver ? <GameOver win={gameOver.win} lose={gameOver.lose} wordle={wordle} /> : <Keyboard />}
+    </AppContext.Provider>
   );
 
 }
