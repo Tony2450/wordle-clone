@@ -31,7 +31,7 @@ body {
   display: none;
 }
 
-.App {
+.Wordle {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;

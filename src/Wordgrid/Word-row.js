@@ -1,7 +1,7 @@
 import React from "react";
 import LetterBox from "./Letter-box";
 import { useContext } from "react";
-import { AppContext } from "../App";
+import { AppContext } from "../pages/Wordle";
 
 const WordRow = (props) => {
     const {status} = useContext(AppContext);

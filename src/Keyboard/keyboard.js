@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Key from "./key";
-import { AppContext } from "../App";
+import { AppContext } from "../pages/Wordle";
 import { useCallback, useEffect } from "react";
 
 const Keyboard = () => {

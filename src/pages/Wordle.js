@@ -1,15 +1,15 @@
-import './static/index.css'
+import '../static/index.css'
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import WordGrid from './Wordgrid/Word-grid';
-import Keyboard from './Keyboard/keyboard';
+import WordGrid from '../Wordgrid/Word-grid';
+import Keyboard from '../Keyboard/keyboard';
 import { createContext } from 'react';
-import GameOver from './Gamestate/GameOver';
-import wordBank from './Wordlebank/wordle-bank.txt';
+import GameOver from '../Gamestate/GameOver';
+import wordBank from '../Wordlebank/wordle-bank.txt';
 
 export const AppContext = createContext()
 
-function App() {
+function Wordle() {
   const message = document.querySelector(".message")
 
   const [wordle, setWordle] = useState("")
@@ -225,8 +225,7 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1 className='title'>Wordle!</h1>
+    <div className="Wordle">
       <AppContext.Provider value={{ board, setBoard, attempt, setAttempt, position, setPosition, onDelete, onEnter, onKeyPress, status, wrongLetters, elsewhereLetters, correctLetters }}>
         {<div className={`message ${gameMessage ? "" : "hide"}`}>Write a 5 letter word and press ENTER to submit!</div>}
         <WordGrid board={board} />
@@ -237,4 +236,4 @@ function App() {
 
 }
 
-export default App;
+export default Wordle;
